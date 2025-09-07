@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perfil — Manuel Martinho</title>
+  <meta name="description" content="Perfil do designer gráfico Manuel Martinho." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Manuel Martinho</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu">☰</button>
+      <nav id="site-nav" class="nav" data-collapsible>
+        <a href="index.html#work">Portfólio</a>
+        <a class="active" href="profile.html">Perfil</a>
+        <a href="contact.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="profile-wrap">
+      <div class="profile-photo">
+        <img src="images/profile-photo.PNG" alt="Retrato de Manuel Martinho">
+      </div>
+      <div class="profile-text">
+        <h1 class="page-title">Sobre Mim</h1>
+        <p>Sou um designer gráfico apaixonado pela criação de sistemas visuais claros, funcionais e consistentes. O meu trabalho assenta na simplicidade, no rigor e na construção de soluções visuais que comuniquem de forma direta e impactante. Mais do que decorar ou enfeitar, acredito que o design deve servir um propósito real: transmitir uma mensagem com clareza e reforçar a identidade de quem a comunica. É por isso que me foco sobretudo em layouts minimalistas, identidades visuais e no desenvolvimento de linguagens gráficas coesas.</p>
+
+        <p>Ao longo do meu percurso, tive contacto com várias áreas do design, incluindo branding, design editorial, comunicação visual e design digital. Esta diversidade de experiências deu-me a capacidade de adaptar a minha abordagem a diferentes contextos e necessidades. Num projeto de branding, preocupo-me em criar sistemas que resistam ao tempo e que funcionem em múltiplas plataformas; num projeto editorial, valorizo a clareza da informação e a hierarquia do conteúdo; em trabalhos digitais, penso na consistência visual e na facilidade de utilização. Esta versatilidade permite-me responder de forma sólida e criativa a cada desafio.</p>
+        
+        <p>Identidade de marca é uma das áreas onde mais gosto de trabalhar. Construir uma identidade não é apenas criar um logótipo ou escolher uma paleta de cores — é criar um sistema completo que represente uma organização ou uma pessoa de forma autêntica. Para mim, uma boa identidade deve ser simples de aplicar, facilmente reconhecível e suficientemente flexível para crescer com a marca. Trabalho para que cada elemento — seja um ícone, um layout ou uma cor — faça parte de um todo coeso, sempre alinhado com a essência do projeto.</p>
+        
+        <p>Nos layouts minimalistas encontro uma forma de pensar e estruturar a informação sem distrações. Prefiro soluções limpas, diretas e objetivas, onde cada detalhe existe porque acrescenta valor à comunicação. Acredito que reduzir ao essencial é o caminho mais eficaz para garantir impacto e longevidade. Esta abordagem ajuda-me a criar designs que não se esgotam rapidamente e que mantêm a sua relevância mesmo quando as tendências mudam.</p>
+        
+        <p>Trabalho sempre com a ideia de que o design é uma ferramenta estratégica. Para além de estética, é organização, funcionalidade e posicionamento. Um bom design reforça a credibilidade, gera confiança e ajuda marcas e produtos a destacarem-se num mercado saturado de estímulos visuais. É esta visão que levo para cada projeto, aliando sensibilidade criativa a disciplina e método.</p>
+        
+        <p>Atualmente, vivo em Portugal e estou disponível tanto para colaborações freelance como para oportunidades a tempo inteiro. Sou motivado por projetos que desafiem a forma como pensamos a comunicação e que me permitam contribuir com sistemas visuais sólidos, práticos e intemporais. Quero continuar a evoluir como designer, trabalhar em contextos diversificados e desenvolver soluções que sejam ao mesmo tempo simples e eficazes.</p>
+        
+        <p>Para mim, o design é, acima de tudo, a arte de simplificar e de dar forma a ideias de maneira clara e memorável. É transformar conceitos complexos em mensagens visuais acessíveis, criar estruturas que perduram e contribuir para um mundo mais organizado e funcional. É este compromisso que me guia e que define a minha prática profissional.</p>
+        
+      </div>
+    </section>
+
+    <!-- Galeria de trabalhos -->
+    <!-- <section class="gallery">
+      <div class="shot"><img src="images/work-detail1.png" alt="Detalhe do trabalho 1"></div>
+      <div class="shot"><img src="images/work-detail2.png" alt="Detalhe do trabalho 2"></div>
+      <div class="shot"><img src="images/work-detail3.png" alt="Detalhe do trabalho 3"></div>
+      <div class="shot"><img src="images/work-detail4.png" alt="Detalhe do trabalho 4"></div> -->
+    </section>
+
+    <!-- Ligações sociais -->
+    <section class="profile-footer">
+      <div>
+        <h3>Redes</h3>
+        <ul>
+          <li><a href="#" target="_blank">LinkedIn</a></li>
+          <li><a href="#" target="_blank">Instagram</a></li>
+          <li><a href="#" target="_blank">Dribbble</a></li>
+          <li><a href="#" target="_blank">Behance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <ul>
+          <li>Email: <a href="mailto:manuelmartinho.9@gmail.com">manuelmartinho.9@gmail.com</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© <span id="y"></span> Manuel Martinho</div>
+    <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+  </footer>
+
+  <script>
+    (function () {
+      const btn = document.querySelector('.nav-toggle');
+      const nav = document.getElementById('site-nav');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        nav.classList.toggle('open', !open);
+      });
+    })();
+  </script>
+</body>
+</html>

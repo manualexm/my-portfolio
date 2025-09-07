@@ -1,0 +1,84 @@
+:root{ --wrap:1200px; --gap:24px }
+
+/* Reset */
+*{ box-sizing:border-box }
+html,body{ margin:0 }
+body{
+  font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "Inter", sans-serif;
+  color:#111; background:#fff;
+}
+
+/* Header */
+.site-header{ position:sticky; top:0; z-index:10; background:#fff; border-bottom:1px solid #eee }
+.wrap{ max-width:var(--wrap); margin:0 auto; padding:0 22px }
+.site-header .wrap{ display:flex; align-items:center; justify-content:space-between; height:72px }
+.brand{ font-family:"Bodoni Moda", serif; font-weight:700; font-size:32px; text-decoration:none; color:#111 }
+nav a{ color:#666; text-decoration:none; padding:8px 12px }
+nav a.active, nav a:hover{ color:#000; font-weight:600 }
+
+/* Grid */
+.grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:var(--gap); margin:28px 0 }
+.span-7{ grid-column:span 7 } .span-6{ grid-column:span 6 } .span-5{ grid-column:span 5 } .span-4{ grid-column:span 4 }
+.hero-row .span-7{ order:2 } .hero-row .span-5{ order:1 }
+@media (max-width:980px){ .span-7,.span-6,.span-5,.span-4{ grid-column:span 12 } }
+
+/* Cards */
+.card{ position:relative; display:block; border-radius:22px; overflow:hidden }
+.ar-3x2{ aspect-ratio:3/2 } .ar-16x9{ aspect-ratio:16/9 } .ar-1x1{ aspect-ratio:1/1 }
+.card img{ position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:center;
+  transition:transform .35s ease, filter .35s ease; filter:saturate(1) }
+.card:hover img{ transform:scale(1.02); filter:saturate(1.05) }
+
+/* Overlay */
+.overlay{ position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center; background:rgba(0,0,0,.55); color:#fff; opacity:0; transition:opacity .25s ease; padding:22px }
+.overlay h4{ font:700 24px/1 "Bodoni Moda", serif; margin:0 0 8px }
+.overlay p{ margin:0; font-size:14px; color:#e5e7eb }
+.card:hover .overlay{ opacity:1 }
+
+/* Case / page titles */
+.page-title{ font:700 40px/1.2 "Bodoni Moda", serif; margin:20px 0 8px }
+
+/* Profile layout */
+.profile-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; margin:40px 0 }
+.profile-photo img{ width:100%; border-radius:16px; object-fit:cover }
+.profile-text p{ line-height:1.7; color:#333; margin-bottom:16px }
+.profile-footer{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:32px; margin:60px 0 }
+.profile-footer h3{ font:700 18px/1.4 "Bodoni Moda", serif; margin:0 0 12px }
+.profile-footer ul{ list-style:none; padding:0; margin:0 }
+.profile-footer li{ margin-bottom:6px }
+.profile-footer a{ text-decoration:none; color:#111 }
+.profile-footer a:hover{ text-decoration:underline }
+@media(max-width:900px){ .profile-wrap{ grid-template-columns:1fr } }
+
+/* Contact form */
+.contact-form{ max-width:640px; margin:22px 0 }
+.contact-form label{ display:block; font-weight:600; margin:14px 0 6px }
+.contact-form input, .contact-form textarea{
+  width:100%; padding:12px 14px; border:1px solid #ddd; border-radius:12px; font:inherit
+}
+.contact-form button{
+  margin-top:12px; padding:12px 16px; border:0; border-radius:12px; background:#111; color:#fff; cursor:pointer
+}
+.contact-form button:hover{ filter:brightness(0.95) }
+.form-note{ color:#666; font-size:14px; margin-top:8px }
+.alert{ margin-top:14px; padding:12px 14px; border-radius:10px; background:#f6f6f6; color:#111; display:none }
+.alert.show{ display:block }
+
+/* Mobile nav */
+.nav-toggle{
+  display:none; border:1px solid #ddd; background:#fff; border-radius:10px;
+  padding:8px 10px; font:600 14px/1 Inter, system-ui, sans-serif; cursor:pointer
+}
+.nav{ display:flex; gap:4px }
+@media (max-width:860px){
+  .nav-toggle{ display:block }
+  .nav{ position:absolute; right:22px; top:72px; background:#fff; border:1px solid #eee;
+        border-radius:12px; padding:8px; display:none; flex-direction:column; min-width:180px;
+        box-shadow:0 10px 30px rgba(0,0,0,.06) }
+  .nav.open{ display:flex }
+  .nav a{ padding:10px 12px }
+}
+
+/* Footer */
+.site-footer{ border-top:1px solid #eee; margin-top:40px; padding:18px 0; color:#666 }

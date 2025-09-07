@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case Study — Project Title</title>
+  <meta name="description" content="Project case study by Manuel Martinho." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Manuel Martinho</a>
+      <nav>
+        <a href="index.html#work" class="active">Portfolio</a>
+        <a href="index.html#about">Profile</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="case">
+    <a class="back" href="index.html">← Back to Portfolio</a>
+    <h1>Project Title</h1>
+    <p class="lead">One-sentence summary. Role, client, outcome.</p>
+
+    <figure class="hero-img">
+      <img src="images/work1.png" alt="Project hero image">
+    </figure>
+
+    <h2>Overview</h2>
+    <p>Brief, constraints, and goals. Your responsibilities and tools.</p>
+
+    <h2>Process</h2>
+    <p>Sketches, iterations, key decisions.</p>
+
+    <div class="gallery">
+      <figure class="shot"><img src="images/work1-detail-1.png" alt="Detail 1"></figure>
+      <figure class="shot"><img src="images/work1-detail-2.png" alt="Detail 2"></figure>
+      <figure class="shot"><img src="images/work1-detail-3.png" alt="Detail 3"></figure>
+    </div>
+
+    <h2>Result</h2>
+    <p>Impact and link to live work if public.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© <span id="y"></span> Manuel Martinho</div>
+    <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+  </footer>
+</body>
+</html>

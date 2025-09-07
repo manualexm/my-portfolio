@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto — Manuel Martinho</title>
+  <meta name="description" content="Página de contacto do designer gráfico Manuel Martinho." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Manuel Martinho</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">☰</button>
+      <nav id="site-nav" class="nav" data-collapsible>
+        <a href="index.html#work">Portfólio</a>
+        <a href="profile.html">Perfil</a>
+        <a class="active" href="contact.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap contact">
+    <h1 class="page-title">Contacto</h1>
+    <p>Email: <a href="mailto:manuelmartinho.9@gmail.com">manuelmartinho.9@gmail.com</a></p>
+
+    <form id="contactForm" class="contact-form" 
+          action="https://formspree.io/f/xdklyzdj" 
+          method="POST">
+      <input type="hidden" name="_subject" value="Nova mensagem do portfólio">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+      <label>Nome
+        <input type="text" name="name" required>
+      </label>
+
+      <label>Email
+        <input type="email" name="email" required>
+      </label>
+
+      <label>Mensagem
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+
+      <button type="submit">Enviar</button>
+      <div id="formOk" class="alert">Mensagem enviada com sucesso.</div>
+      <div id="formErr" class="alert">Não foi possível enviar. Tente novamente.</div>
+      <p class="form-note">A sua mensagem será enviada em segurança através do Formspree.</p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© <span id="y"></span> Manuel Martinho</div>
+    <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+  </footer>
+
+  <script>
+    // menu móvel
+    (function () {
+      const btn = document.querySelector('.nav-toggle');
+      const nav = document.getElementById('site-nav');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        nav.classList.toggle('open', !open);
+      });
+    })();
+
+    // envio ajax do formulário
+    (function () {
+      const form = document.getElementById('contactForm');
+      const ok = document.getElementById('formOk');
+      const err = document.getElementById('formErr');
+      if (!form) return;
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        ok.classList.remove('show'); err.classList.remove('show');
+        try {
+          const resp = await fetch(form.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: new FormData(form)
+          });
+          if (resp.ok) { form.reset(); ok.classList.add('show'); }
+          else { err.classList.add('show'); }
+        } catch { err.classList.add('show'); }
+      });
+    })();
+  </script>
+</body>
+</html>
